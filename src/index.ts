@@ -16,7 +16,7 @@ export class RxHttpServer {
     console.log(`[LOG]: Request ${req.method} to ${req.url}`);
   }
 
-  constructor(parameters) {
+  constructor(parameters: {_host: string, _port: number}) {
     Object.assign(this, parameters);
     // create http server
     this.server = http.createServer();
