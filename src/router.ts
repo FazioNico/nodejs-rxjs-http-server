@@ -1,8 +1,8 @@
 import { Subject, Observable } from 'rxjs';
+import { IncomingMessage } from 'http';
 import { map, catchError } from 'rxjs/operators';
 import { checkAuth } from './auth.middlware';
 import { IHTTP, routerUtils } from './utils';
-
 
 export class RxRouter {
 
@@ -19,7 +19,7 @@ export class RxRouter {
     );
   }
 
-  static route(method: string, url: string, cb: any) {
+  static route(method: string, url: string, cb: (req: IncomingMessage) => any) {
     return (HTTP: IHTTP) => {
       const {req, res, handler} = HTTP;
       // exclude url

@@ -1,14 +1,13 @@
-import { fromEvent } from 'rxjs';
-import { Observable } from 'rxjs';
+import { fromEvent, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import * as http from 'http';
 import { RxRouter } from './router';
-import { IHTTP } from './utils';
+import { IHTTP, IExtError } from './utils';
 
 export class RxHttpServer {
 
   public readonly server: http.Server;
-  private readonly _request$: Observable<any>;
+  private readonly _request$: Observable<IHTTP | {}>;
   private readonly _host: string;
   private readonly _port: number;
   // define middelwares
@@ -57,12 +56,12 @@ export class RxHttpServer {
             console.log(`[INFO]: Response ${req.method} to ${req.url}`);
             res.end(response);
           },
-          error => {
+          (error: IExtError) => {
             console.log('[ERROR]: THEN ');
             Object.assign(res, { statusCode: error.status || 500 }).end(error.message || 'Error...');
           }
         )
-        .catch(err => {
+        .catch((err: IExtError) => {
           res.statusCode = err.status;
           console.log(`[ERROR]: CATCH ${err.status} ${req.method} ${err.message}`);
           res.end(err.message);
