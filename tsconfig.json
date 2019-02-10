@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "experimentalDecorators": true,
+    "noUnusedLocals": false,
+    "lib": [
+      "dom",
+      "es2015",
+      "esnext.asynciterable"
+    ],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "include": [
+      "**/*.ts"
+  ],
+  "typedocOptions": {
+    "mode": "modules",
+    "out": "docs/lib",
+    "exclude": [
+      "**/*.spec.ts",
+      "**/*.e2e.ts",
+      "**/*.docs.ts"
+    ],
+    "theme": "default",
+    "ignoreCompilerErrors": true,
+    "excludePrivate": true,
+    "excludeNotExported": true,
+    "target": "ES5",
+    "moduleResolution": "node",
+    "preserveConstEnums": true,
+    "stripInternal": true,
+    "suppressExcessPropertyErrors": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "module": "commonjs"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "nodejs-rx-server",
+  "version": "0.0.1",
+  "description": "NodeJS Reactive Server build with RxJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=prod node ./index.js",
+    "prod": "npm run webpack:prod",
+    "dev": "npm run webpack:dev",
+    "mongod": "$HOME/Applications/mongodb/bin/mongod --dbpath $HOME/Applications/mongodb/data/db",
+    "webpack:dev": "webpack --watch --mode=development  --log-level=debug",
+    "webpack:prod": "NODE_ENV=prod webpack --mode=production",
+    "e2e": "echo \"Info: no test specified\"",
+    "test": "echo \"Info: no test specified\"",
+    "test:ci": "echo \"Info: no test specified\"",
+    "coveralls": "echo \"Info: no script specified\"",
+    "doc:rest": "echo \"Info: no script specified\"",
+    "reinstall": "rm -rf ./node_modules && npm install"
+  },
+  "author": "Nicolas Fazio",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.1.0",
+    "events": "^3.0.0",
+    "helmet": "^3.15.0",
+    "hpp": "^0.2.2",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.3.14",
+    "morgan": "^1.9.1",
+    "rxjs": "^6.4.0"
+  },
+  "devDependencies": {
+    "@types/compression": "0.0.36",
+    "@types/cors": "^2.8.4",
+    "@types/dotenv": "^6.1.0",
+    "@types/helmet": "0.0.42",
+    "@types/hpp": "^0.2.1",
+    "@types/jsonwebtoken": "^8.3.0",
+    "@types/mongoose": "^5.3.2",
+    "@types/morgan": "^1.7.35",
+    "@types/node": "^10.12.12",
+    "clean-webpack-plugin": "^1.0.0",
+    "codelyzer": "^4.5.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "mocha-webpack": "^1.1.0",
+    "nodemon-webpack-plugin": "^4.0.6",
+    "ts-loader": "^5.3.1",
+    "tslint": "^5.11.0",
+    "typescript": "~3.1.1",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.27.0",
+    "webpack-command": "^0.4.2",
+    "webpack-merge": "^4.1.4"
+  },
+  "engine": {
+    "node": "10.12.0",
+    "npm": "6.4.1"
+  }
+}
