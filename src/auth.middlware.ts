@@ -1,4 +1,4 @@
-import { IHTTP, IExtError } from 'utils';
+import { IHTTP, IExtError } from './utils';
 import { IncomingMessage } from 'http';
 
 export const checkAuth = (filter: (req: IncomingMessage) => boolean) => (HTTP: IHTTP) => {
